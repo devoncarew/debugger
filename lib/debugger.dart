@@ -12,18 +12,14 @@ library debugger;
  * `_AsyncCompleter` uses the `break: true` to indicate that when the
  * micro-task is executed, it should use `invokeAndBreak(f)`. The user can
  * then step through the created closure.
- */
-
-/**
- * How would step-over Futures / await be implemented?
+ *
+ * ## How would step-over Futures / await be implemented?
  *
  * When stepping over an await, the Completer could be created with a
  * `breakOnReturn` flag. When invoking the `then()` closure, the library could
  * use the `invokeAndBreak()` functionality.
- */
-
-/**
- * What about step-out from something returning a Future?
+ *
+ * ## What about step-out from something returning a Future?
  *
  * Perhaps implemented the same as the step-over Future case? You want to break
  * where the value is used; when the result is used from the `then()` or
@@ -45,6 +41,7 @@ dynamic invokeAndBreak(Function f) {
 }
 
 /* Or a singleton class? */
+/* Or static methods on a class? */
 
 //final Debugger debugger = new Debugger._();
 

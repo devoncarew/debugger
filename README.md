@@ -21,7 +21,7 @@ Future<String> getContents(String path) {
 So, setting a breakpoint on line 2 above will break on the `String contents`
 line. In synchronous code, you'd expect hitting 'step over' to stop on the next
 line, `print`. With the call to `await` however, what the VM's doing is
-converting await to something like `return new Completer(stuff).future;`. So a
+converting await to something like `return new Completer(stuff).future`. So a
 step over will actually just leave the method. It'll break next in some Futures
 code, and stepping more will leave you wandering around the microtask queue.
 
